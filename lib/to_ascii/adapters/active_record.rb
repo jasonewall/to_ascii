@@ -6,7 +6,5 @@ module ToAscii::Adapters::ActiveRecordExtensions
   end
 end
 
-ActiveSupport.on_load(:active_record) do
-  ActiveRecord::Base.send(:extend, ToAscii::ClassExtensions)
-  ActiveRecord::Base.send(:extend, ToAscii::Adapters::ActiveRecordExtensions)
-end
+ActiveRecord::Base.send(:extend, ToAscii::ClassExtensions)
+ActiveRecord::Base.send(:extend, ToAscii::Adapters::ActiveRecordExtensions)

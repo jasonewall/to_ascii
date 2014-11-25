@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{#to_ascii a collection}
   spec.description   = %q{Adds the #to_ascii method to a number of collection type classes to print out a nicely formatted
   ASCII table of the attributes of each element.}
-  spec.homepage      = ""
+  spec.homepage      = "http://github.com/thejayvm/to_ascii"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
