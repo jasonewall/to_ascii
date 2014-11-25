@@ -1,3 +1,5 @@
+require 'to_ascii'
+
 module ToAscii::Adapters::ActiveRecordExtensions
   def to_a_for_ascii
     where(nil).to_a
