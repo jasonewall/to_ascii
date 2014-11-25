@@ -1,0 +1,1 @@
+module ToAscii::Adapters; end
