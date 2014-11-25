@@ -1,9 +1,7 @@
-require 'to_ascii'
-require 'stringio'
+require 'spec_helper'
 
 describe ToAscii::ClassExtensions do
   let(:io) { StringIO.new }
-
 
   class TestClass
     extend ToAscii::ClassExtensions

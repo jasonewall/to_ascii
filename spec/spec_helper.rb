@@ -1,1 +1,2 @@
-# require 'to_ascii'
+require 'to_ascii'
+require 'stringio'
