@@ -1,5 +1,8 @@
 require "to_ascii/version"
+require 'active_support'
+require 'active_support/core_ext'
 
 module ToAscii
-  # Your code goes here...
+  require 'to_ascii/class_extensions'
+  require 'to_ascii/visitor'
 end
