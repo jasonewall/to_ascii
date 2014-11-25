@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["javajo@gmail.com"]
   spec.summary       = %q{#to_ascii a collection}
   spec.description   = %q{Adds the #to_ascii method to a number of collection type classes to print out a nicely formatted
-  ASCII table of all the attributes of each element.}
+  ASCII table of the attributes of each element.}
   spec.homepage      = ""
   spec.license       = "MIT"
 
