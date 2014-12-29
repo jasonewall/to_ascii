@@ -54,6 +54,9 @@ describe ToAscii::Visitor do
 
   it_should_behave_like 'a column definer'
 
+  context :instance do
+    subject { visitor.new }
 
+    it_should_behave_like 'a column definer'
   end
 end
