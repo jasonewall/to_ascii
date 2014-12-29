@@ -42,7 +42,7 @@ describe ToAscii::ClassExtensions do
 
     it 'should accept a block' do
       ClassWithNoDefaultVisitor.to_ascii(nil, io) do
-        column :id, 10
+        columns id(10)
       end
       expect(io.string).to match(/id/)
       expect(io.string).to_not match(/to_ascii_visitor/)

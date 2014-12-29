@@ -1,27 +1,60 @@
 module ToAscii
+  module ColumnDefiner
+    def column(name, width)
+      columns << create_column(name, width)
+    end
+
+    def id(width = 6)
+      create_column :id, width
+    end
+
+    def respond_to_missing?(method, include_private = false) # ruby 1.9+ only, but 1.8 won't care because it just looks like a method #honeybadger
+      true
+    end
+
+    def respond_to?(method, include_private = false)
+      true
+    end # for ruby 1.8 completeness
+
+    def method_missing(method, *args, &block)
+      raise ArgumentError, "wrong number of arguments (#{args.length} for 0..1)" if args.length > 1
+      width = args.length == 1 ? args[0] : method.to_s.length + 2
+      create_column method, width
+    end
+
+  private
+
+    def create_column(name, width)
+      [name, width]
+    end
+  end
+
   class Visitor
     class << self
+      include ColumnDefiner
+
       def for_class(clazz)
         "#{clazz.name}ToAscii".constantize
       end
 
-      def column(name, width)
-        columns << [name, width]
-      end
-
-      def columns
+      def columns(*args)
         @columns ||= []
+        return @columns if args.length == 0
+
+        @columns += args
       end
     end
 
-    attr_reader :columns
+    include ColumnDefiner
 
     def initialize
       @columns = self.class.columns.dup
     end
 
-    def column(name, width)
-      columns << [name, width]
+    def columns(*args)
+      return @columns if args.length == 0
+
+      @columns += args
     end
 
     def cell_border
