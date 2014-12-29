@@ -18,7 +18,8 @@ module ToAscii
       end
 
       def method_missing(method, *args, &block)
-        column method, method.to_s.length + 2
+        width = args.length == 1 ? args[0] : method.to_s.length + 2
+        column method, width
       end
     end
 

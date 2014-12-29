@@ -36,5 +36,10 @@ describe ToAscii::Visitor do
         expect(column_width_of col).to eq 14
       end
     end
+
+    it 'should accept a width argument' do
+      visitor.magic_potion(300)
+      expect(column_width_of visitor.columns.first).to eq(300)
+    end
   end
 end
