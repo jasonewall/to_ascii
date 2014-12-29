@@ -1,11 +1,11 @@
 module ToAscii
   module ColumnDefiner
     def column(name, width)
-      columns << [name, width]
+      columns << create_column(name, width)
     end
 
     def id(width = 6)
-      column :id, width
+      create_column :id, width
     end
 
     def respond_to_missing?(method, include_private = false) # ruby 1.9+ only, but 1.8 won't care because it just looks like a method #honeybadger
@@ -19,7 +19,13 @@ module ToAscii
     def method_missing(method, *args, &block)
       raise ArgumentError, "wrong number of arguments (#{args.length} for 0..1)" if args.length > 1
       width = args.length == 1 ? args[0] : method.to_s.length + 2
-      column method, width
+      create_column method, width
+    end
+
+  private
+
+    def create_column(name, width)
+      [name, width]
     end
   end
 
