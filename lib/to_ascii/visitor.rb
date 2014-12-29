@@ -14,7 +14,11 @@ module ToAscii
       end
 
       def id(width = 6)
-        columns << [:id, width]
+        column :id, width
+      end
+
+      def method_missing(method, *args, &block)
+        column method, method.to_s.length + 2
       end
     end
 

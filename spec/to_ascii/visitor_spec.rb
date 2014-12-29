@@ -26,4 +26,15 @@ describe ToAscii::Visitor do
       expect(column_width_of visitor.columns.first).to eq 18
     end
   end
+
+  describe :method_missing do
+    it 'should generate any column def' do
+      visitor.magic_potion
+      expect(visitor.columns.length).to eq 1
+      visitor.columns.first.tap do |col|
+        expect(column_name_of col).to eq :magic_potion
+        expect(column_width_of col).to eq 14
+      end
+    end
+  end
 end
