@@ -21,6 +21,10 @@ module ToAscii
         true
       end
 
+      def respond_to?(method, include_private = false)
+        true
+      end # for ruby 1.8 completeness
+
       def method_missing(method, *args, &block)
         width = args.length == 1 ? args[0] : method.to_s.length + 2
         column method, width
