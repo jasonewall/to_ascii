@@ -12,6 +12,10 @@ module ToAscii
       def columns
         @columns ||= []
       end
+
+      def id(width = 6)
+        columns << [:id, width]
+      end
     end
 
     attr_reader :columns
