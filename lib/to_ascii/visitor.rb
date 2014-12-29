@@ -17,6 +17,10 @@ module ToAscii
         column :id, width
       end
 
+      def respond_to_missing?(method, include_private = false) # ruby 1.9+ only, but 1.8 won't care because it just looks like a method #honeybadger
+        true
+      end
+
       def method_missing(method, *args, &block)
         width = args.length == 1 ? args[0] : method.to_s.length + 2
         column method, width
