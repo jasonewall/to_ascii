@@ -41,5 +41,10 @@ describe ToAscii::Visitor do
       visitor.magic_potion(300)
       expect(column_width_of visitor.columns.first).to eq(300)
     end
+
+    it 'should raise arity errors if has too many args' do
+      # this might save some people some headaches
+      expect { visitor.magic(30, :id) }.to raise_error(ArgumentError, 'wrong number of arguments (2 for 0..1)')
+    end
   end
 end

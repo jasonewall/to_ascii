@@ -26,6 +26,7 @@ module ToAscii
       end # for ruby 1.8 completeness
 
       def method_missing(method, *args, &block)
+        raise ArgumentError, "wrong number of arguments (#{args.length} for 0..1)" if args.length > 1
         width = args.length == 1 ? args[0] : method.to_s.length + 2
         column method, width
       end
