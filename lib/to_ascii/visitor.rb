@@ -37,17 +37,24 @@ module ToAscii
         "#{clazz.name}ToAscii".constantize
       end
 
-      def columns
+      def columns(*args)
         @columns ||= []
+        return @columns if args.length == 0
+
+        @columns += args
       end
     end
 
     include ColumnDefiner
 
-    attr_reader :columns
-
     def initialize
       @columns = self.class.columns.dup
+    end
+
+    def columns(*args)
+      return @columns if args.length == 0
+
+      @columns += args
     end
 
     def cell_border

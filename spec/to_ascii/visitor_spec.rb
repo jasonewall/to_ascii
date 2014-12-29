@@ -42,6 +42,19 @@ describe ToAscii::Visitor do
         expect { subject.magic(30, :id) }.to raise_error(ArgumentError, 'wrong number of arguments (2 for 0..1)')
       end
     end
+
+    describe :columns do
+      it 'should just return the collection if no params' do
+        expect(subject.columns.length).to eq 0
+        subject.column :name, 60
+        expect(subject.columns.length).to eq 1
+      end
+
+      it 'should add columns if provided by params' do
+        subject.columns [:id, 16]
+        expect(subject.columns.length).to eq 1
+      end
+    end
   end
 
   subject { visitor }
