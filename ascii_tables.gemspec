@@ -5,7 +5,7 @@ require 'ascii_tables/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "ascii_tables"
-  spec.version       = ToAscii::VERSION
+  spec.version       = AsciiTables::VERSION
   spec.authors       = ["Jason Wall"]
   spec.email         = ["javajo@gmail.com"]
   spec.summary       = %q{#to_ascii a collection}

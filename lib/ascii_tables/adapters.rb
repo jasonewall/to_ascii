@@ -1,1 +1,1 @@
-module ToAscii::Adapters; end
+module AsciiTables::Adapters; end
