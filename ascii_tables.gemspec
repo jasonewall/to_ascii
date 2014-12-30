@@ -1,10 +1,10 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'to_ascii/version'
+require 'ascii_tables/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "to_ascii"
+  spec.name          = "ascii_tables"
   spec.version       = ToAscii::VERSION
   spec.authors       = ["Jason Wall"]
   spec.email         = ["javajo@gmail.com"]

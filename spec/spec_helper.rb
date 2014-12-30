@@ -1,2 +1,2 @@
-require 'to_ascii'
+require 'ascii_tables'
 require 'stringio'

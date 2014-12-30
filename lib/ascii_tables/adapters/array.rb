@@ -1,3 +1,3 @@
-require 'to_ascii'
+require 'ascii_tables'
 
 Array.send(:include, ToAscii::ClassExtensions)

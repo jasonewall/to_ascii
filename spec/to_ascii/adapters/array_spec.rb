@@ -1,5 +1,5 @@
 require 'spec_helper'
-require 'to_ascii/adapters/array'
+require 'ascii_tables/adapters/array'
 
 describe Array do
   Person = Struct.new(:first_name, :last_name)
