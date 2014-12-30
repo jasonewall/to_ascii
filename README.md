@@ -1,4 +1,4 @@
-# ToAscii
+# AsciiTables
 
 Adds the #to_ascii method to a number of collection type classes to print out a nicely formatted
   ASCII table of the attributes of each element.
@@ -7,7 +7,7 @@ Adds the #to_ascii method to a number of collection type classes to print out a 
 
 Add this line to your application's Gemfile:
 
-    gem 'to_ascii'
+    gem 'ascii_tables'
 
 And then execute:
 
@@ -15,17 +15,17 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install to_ascii
+    $ gem install ascii_tables
 
 ## Usage
 
 Require an adapter. By default the `to_ascii` method doesn't get added to anything until you require
 one of the following:
 
-    require 'to_ascii/adapters/active_record'
-    require 'to_ascii/adapters/enumerable'
-    require 'to_ascii/adapters/array'
-    require 'to_ascii/adapters/all' # requires all of the above
+    require 'ascii_tables/adapters/active_record'
+    require 'ascii_tables/adapters/enumerable'
+    require 'ascii_tables/adapters/array'
+    require 'ascii_tables/adapters/all' # requires all of the above
 
 Then:
 
@@ -37,7 +37,7 @@ Then:
 
 You can also define visitor/serializer classes based on model names:
 
-    class PersonToAscii < ToAscii::Visitor
+    class PersonToAscii < AsciiTables::Visitor
       column :id, 6
       column :first_name, 24
       column :last_name, 32
@@ -47,7 +47,7 @@ And then `Person.where(:last_name => 'Newton').to_ascii` just works. Look, ma! N
 
 Or, create visitor classes that are called whatever and pass them into `#to_ascii` yourself!
 
-    class GarblyNamed < ToAscii::Visitor
+    class GarblyNamed < AsciiTables::Visitor
       column :id, 6
       column :first_name, 24
       column :last_name, 32
