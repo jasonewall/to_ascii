@@ -1,10 +1,10 @@
 require 'spec_helper'
 
-describe ToAscii::ClassExtensions do
+describe AsciiTables::ClassExtensions do
   let(:io) { StringIO.new }
 
   class TestClass
-    extend ToAscii::ClassExtensions
+    extend AsciiTables::ClassExtensions
 
     def self.to_a
       []
@@ -12,7 +12,7 @@ describe ToAscii::ClassExtensions do
   end
 
   class ClassWithNoDefaultVisitor
-    extend ToAscii::ClassExtensions
+    extend AsciiTables::ClassExtensions
 
     class << self
       attr_reader :warned
@@ -26,11 +26,11 @@ describe ToAscii::ClassExtensions do
     end
   end
 
-  class TestClassToAscii < ToAscii::Visitor
+  class TestClassToAscii < AsciiTables::Visitor
     column :to_ascii_visitor, 24
   end
 
-  class CustomVisitor < ToAscii::Visitor
+  class CustomVisitor < AsciiTables::Visitor
     column :name, 32
   end
 

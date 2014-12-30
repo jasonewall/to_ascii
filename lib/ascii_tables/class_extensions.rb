@@ -1,4 +1,4 @@
-module ToAscii
+module AsciiTables
   module ClassExtensions
     def to_ascii(visitor = nil, io = STDOUT, &block)
       begin

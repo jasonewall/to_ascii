@@ -1,4 +1,4 @@
-module ToAscii
+module AsciiTables
   module ColumnDefiner
     def column(name, width)
       columns << create_column(name, width)

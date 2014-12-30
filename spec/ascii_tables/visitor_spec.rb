@@ -1,7 +1,7 @@
 require 'spec_helper'
 
-describe ToAscii::Visitor do
-  let(:visitor) { Class.new(ToAscii::Visitor) }
+describe AsciiTables::Visitor do
+  let(:visitor) { Class.new(AsciiTables::Visitor) }
 
   def column_name_of col
     col[0]
