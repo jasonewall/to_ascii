@@ -1,3 +1,3 @@
-require 'to_ascii'
+require 'ascii_tables'
 
-Enumerable.send(:include, ToAscii::ClassExtensions)
+Enumerable.send(:include, AsciiTables::ClassExtensions)

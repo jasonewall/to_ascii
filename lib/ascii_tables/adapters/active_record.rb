@@ -1,10 +1,10 @@
-require 'to_ascii'
+require 'ascii_tables'
 
-module ToAscii::Adapters::ActiveRecordExtensions
+module AsciiTables::Adapters::ActiveRecordExtensions
   def to_a_for_ascii
     where(nil).to_a
   end
 end
 
-ActiveRecord::Base.send(:extend, ToAscii::ClassExtensions)
-ActiveRecord::Base.send(:extend, ToAscii::Adapters::ActiveRecordExtensions)
+ActiveRecord::Base.send(:extend, AsciiTables::ClassExtensions)
+ActiveRecord::Base.send(:extend, AsciiTables::Adapters::ActiveRecordExtensions)
